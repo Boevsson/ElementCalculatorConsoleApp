@@ -27,9 +27,9 @@ namespace ElementorCalculator
                     int closeBracketIndex = match.Value.IndexOf(')') + 1;
 
                     // Take the grand subscript of the whole molecule thats after the brackets. Example: (H2O)10. Grand subscript is 10.
-                    string lastNumber = match.Value.Substring(closeBracketIndex, (match.Value.Length) - closeBracketIndex);
+                    string subscriptNumber = match.Value.Substring(closeBracketIndex, (match.Value.Length) - closeBracketIndex);
 
-                    int gandSubscript = Convert.ToInt32(lastNumber);
+                    int gandSubscript = Convert.ToInt32(subscriptNumber);
                     
                     foreach (Match innerMatch in innerMatches)
                     {
@@ -47,24 +47,26 @@ namespace ElementorCalculator
 
         void AddToResult(Match match, int gandSubscript = 1)
         {
-            int keyLength = match.Value.Length;
+            int keyLength = 1;
             int subscript = 1;
-            bool withSubscript = false;
+            
+            // If the send character is a letter then the element's name is 2 letters long
+            if (match.Value.Length > 1 && Char.IsLetter(match.Value[1]))
+            {
+                keyLength = 2;
+            }
 
-            // TODO: Make this support two digit subscript numbers in v1.1
+            // Check if the last char of the match is a digit. If true then we have subscript.
             if (Char.IsDigit(match.Value[match.Value.Length - 1]))
             {
-                keyLength = match.Value.Length - 1;
-                withSubscript = true;
+                // Get the subscript number string and parse it to int
+                string subscriptNumber = match.Value.Substring(keyLength, (match.Value.Length - keyLength));
+                subscript = Convert.ToInt32(subscriptNumber);
             }
 
             string key = match.Value.Substring(0, keyLength);
-            string lastChar = match.Value[match.Value.Length - 1].ToString();
 
-            if (withSubscript)
-            {
-                subscript = Convert.ToInt32(lastChar);
-            }
+            Console.WriteLine(key);
 
             // Multiply the subscript with the grand subscript to get the total
             subscript *= gandSubscript;
