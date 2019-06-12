@@ -11,7 +11,7 @@ namespace ElementorCalculator
 
         public SortedDictionary<string, int> Calculate(string input)
         {
-            // [Cu(NH3)4(H2O)2]SO4
+            // Example: [Cu(NH3)4(H2O)2]SO4
             Regex regex = new Regex(@"[A-Z][a-z]?\d*|\(.*?\)\d+");
             MatchCollection matches = regex.Matches(input);
 
