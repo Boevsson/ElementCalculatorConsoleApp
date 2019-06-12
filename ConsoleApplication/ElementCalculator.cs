@@ -65,9 +65,7 @@ namespace ElementorCalculator
             }
 
             string key = match.Value.Substring(0, keyLength);
-
-            Console.WriteLine(key);
-
+            
             // Multiply the subscript with the grand subscript to get the total
             subscript *= gandSubscript;
 
