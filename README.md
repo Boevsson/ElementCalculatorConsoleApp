@@ -1,7 +1,7 @@
 # ElementCalculatorConsoleApp
 C# ElementCalculatorConsoleApp
 
-Enter a molecule structure and you will get a string representation of the total count of every item in the molecule.
+Enter a molecule structure and you will get a string representation of the total count of every atom in the molecule.
 
 ## Usage
 
