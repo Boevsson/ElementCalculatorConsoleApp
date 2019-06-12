@@ -1,5 +1,5 @@
+using ElementCalculatorConsoleApp;
 using NUnit.Framework;
-using ElementorCalculator;
 
 namespace Tests
 {

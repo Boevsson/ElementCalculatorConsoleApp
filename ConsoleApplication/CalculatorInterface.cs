@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ElementorCalculator
+namespace ElementCalculatorConsoleApp
 {
     public interface CalculatorInterface
     {

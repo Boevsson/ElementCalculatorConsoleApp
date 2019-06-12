@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace ElementorCalculator
+namespace ElementCalculatorConsoleApp
 {
     public class ElementCalculator: CalculatorInterface
     {

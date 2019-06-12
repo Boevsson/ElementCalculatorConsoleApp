@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApplication\ElementorCalculator.csproj" />
+    <ProjectReference Include="..\ConsoleApplication\ElementCalculatorConsoleApp.csproj" />
   </ItemGroup>
 
 </Project>
