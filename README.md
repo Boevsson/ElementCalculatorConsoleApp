@@ -3,7 +3,7 @@ C# ElementCalculatorConsoleApp
 
 Enter a molecule structure and you will get a string of the total count of every item in the molecule.
 
-Example:
+## Usage
 
 Input: "NaCl"                  Output: "Cl1Na1" 
 Input: "Ca(OH)2"               Output: "Ca1H2O2" 
